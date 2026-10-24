@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Environment variables (never commit secrets)
+.env
+.env.local
+
+# SQLite database files (created automatically on first run)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Build output
+frontend/dist/
+
+# Logs
+npm-debug.log*
+*.log
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
