@@ -1,0 +1,266 @@
+/* ==========================================================
+   Global styles & design tokens (shared by every page)
+   ========================================================== */
+:root {
+  --navy-900: #071a33;
+  --navy-800: #0b2545;
+  --navy-700: #13315c;
+  --navy-100: #e8eef7;
+  --gold-500: #f4b223;
+  --gold-600: #d99a0b;
+  --gold-100: #fdf3dc;
+
+  --ink: #14213d;
+  --muted: #5b6475;
+  --line: #e2e6ee;
+  --surface: #ffffff;
+  --bg: #f6f7fb;
+
+  --success: #18794e;
+  --success-bg: #e6f6ee;
+  --danger: #c0362c;
+  --danger-bg: #fdecea;
+  --info-bg: #eaf2ff;
+
+  /* Category colours */
+  --cat-seminar: #3b5bdb;
+  --cat-workshop: #0c8599;
+  --cat-sports: #2b8a3e;
+  --cat-competition: #e8590c;
+  --cat-conference: #7048e8;
+  --cat-society: #d6336c;
+
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 2px rgba(7, 26, 51, 0.06);
+  --shadow: 0 6px 24px rgba(7, 26, 51, 0.08);
+  --shadow-lg: 0 18px 40px rgba(7, 26, 51, 0.14);
+
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-head: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-head);
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+  color: var(--navy-900);
+}
+
+a {
+  color: var(--navy-700);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 56px 0;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font: 600 0.95rem var(--font-body);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--gold-500);
+  color: var(--navy-900);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--gold-600);
+}
+
+.btn-dark {
+  background: var(--navy-800);
+  color: #fff;
+}
+
+.btn-dark:hover:not(:disabled) {
+  background: var(--navy-700);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: currentColor;
+  color: var(--navy-800);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: var(--navy-100);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #a02a21;
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ---------- Badges ---------- */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: var(--navy-700);
+}
+
+.badge-seminar { background: var(--cat-seminar); }
+.badge-workshop { background: var(--cat-workshop); }
+.badge-sports { background: var(--cat-sports); }
+.badge-competition { background: var(--cat-competition); }
+.badge-conference { background: var(--cat-conference); }
+.badge-society { background: var(--cat-society); }
+
+/* ---------- Alerts ---------- */
+.alert {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.alert-error {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.alert-success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.alert-info {
+  background: var(--info-bg);
+  color: var(--navy-700);
+}
+
+/* ---------- Loading spinner ---------- */
+.spinner {
+  width: 36px;
+  height: 36px;
+  margin: 48px auto;
+  border: 4px solid var(--navy-100);
+  border-top-color: var(--gold-500);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Page header (used by inner pages) ---------- */
+.page-header {
+  background: linear-gradient(135deg, var(--navy-800), var(--navy-700));
+  color: #fff;
+  padding: 40px 0 36px;
+}
+
+.page-header h1 {
+  color: #fff;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 6px;
+}
+
+.page-header p {
+  margin: 0;
+  color: #c9d6ea;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--muted);
+  padding: 48px 16px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
