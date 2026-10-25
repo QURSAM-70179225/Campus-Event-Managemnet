@@ -7,6 +7,7 @@ const cors = require('cors');
 
 const authRoutes = require('./routes/authRoutes');
 const eventRoutes = require('./routes/eventRoutes');
+const registrationRoutes = require('./routes/registrationRoutes');
 const { notFound, errorHandler } = require('./middleware/errorHandler');
 
 const app = express();
@@ -27,6 +28,7 @@ app.get('/api/health', (req, res) => {
 
 app.use('/api', authRoutes);            // POST /api/signup, POST /api/login, GET /api/me
 app.use('/api/events', eventRoutes);    // /api/events CRUD
+app.use('/api', registrationRoutes);    // POST /api/register, GET /api/registrations
 
 app.use(notFound);
 app.use(errorHandler);
