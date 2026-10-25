@@ -1,10 +1,20 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext.jsx';
 import '../styles/navbar.css';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
   const close = () => setOpen(false);
+
+  const handleLogout = () => {
+    logout();
+    close();
+    navigate('/');
+  };
 
   return (
     <header className="navbar">
@@ -35,14 +45,32 @@ export default function Navbar() {
           <NavLink to="/events" onClick={close}>
             Events
           </NavLink>
+          {user && (
+            <NavLink to="/dashboard" onClick={close}>
+              Dashboard
+            </NavLink>
+          )}
 
           <div className="nav-actions">
-            <Link to="/login" className="btn btn-outline btn-sm nav-btn-light" onClick={close}>
-              Login
-            </Link>
-            <Link to="/signup" className="btn btn-primary btn-sm" onClick={close}>
-              Register
-            </Link>
+            {user ? (
+              <>
+                <span className="nav-user" title={user.email}>
+                  Hi, {user.name.split(' ')[0]}
+                </span>
+                <button className="btn btn-outline btn-sm nav-btn-light" onClick={handleLogout}>
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link to="/login" className="btn btn-outline btn-sm nav-btn-light" onClick={close}>
+                  Login
+                </Link>
+                <Link to="/signup" className="btn btn-primary btn-sm" onClick={close}>
+                  Register
+                </Link>
+              </>
+            )}
           </div>
         </nav>
       </div>

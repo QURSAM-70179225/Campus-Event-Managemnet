@@ -1,0 +1,157 @@
+/* ---------- Dashboard + shared table styles ---------- */
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.dash-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px 22px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.dash-stat span {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.dash-stat strong {
+  font: 800 1.8rem var(--font-head);
+  color: var(--navy-900);
+}
+
+.dash-stat-link {
+  background: var(--gold-100);
+  border-color: transparent;
+  transition: transform 0.2s;
+}
+
+.dash-stat-link strong {
+  font-size: 1.2rem;
+  margin-top: auto;
+}
+
+.dash-stat-link:hover {
+  transform: translateY(-2px);
+}
+
+.dash-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.dash-panel h2 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+
+.table th {
+  text-align: left;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--line);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.table tr:hover td {
+  background: #fafbfd;
+}
+
+.table-title {
+  display: block;
+  font-weight: 600;
+  color: var(--navy-900);
+  margin-bottom: 4px;
+}
+
+.table-title:hover {
+  text-decoration: underline;
+}
+
+.table-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.muted-block {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+/* Tables turn into cards on small screens */
+@media (max-width: 760px) {
+  .dash-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-panel {
+    padding: 16px;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    margin-bottom: 12px;
+    padding: 8px 4px;
+  }
+
+  .table td {
+    border: 0;
+    padding: 6px 12px;
+  }
+
+  .table td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+  }
+
+  .table-actions {
+    justify-content: flex-start;
+  }
+}

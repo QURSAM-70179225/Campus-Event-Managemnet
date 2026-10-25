@@ -6,6 +6,7 @@ import EventsPage from './pages/EventsPage.jsx';
 import EventDetailsPage from './pages/EventDetailsPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import SignupPage from './pages/SignupPage.jsx';
+import DashboardPage from './pages/DashboardPage.jsx';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/events/:id" element={<EventDetailsPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
       <Footer />
     </>
