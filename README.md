@@ -2,6 +2,13 @@
 
 A full-stack web application where students of **The University of Lahore** can browse university events — seminars, workshops, sports, competitions, conferences and society activities — and register for them. Administrators can create, update and delete events.
 
+## 🔗 Live Demo
+
+- **Website:** https://campus-event-managemnet.vercel.app
+- **API:** https://YOUR-RENDER-URL.onrender.com/api/events
+- **Demo logins:** admin@uol.edu.pk / admin123 · student@uol.edu.pk / student123
+
+> The API runs on Render's free plan: the first request after a while can take ~50 seconds.
 ![Home page](screenshots/01-home.png)
 
 ## 👥 Team Members
