@@ -1,10 +1,23 @@
-// Main application component.
-// Pages and routes will be added by the team through feature branches.
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
+
 export default function App() {
   return (
-    <main className="container section">
-      <h1>Campus Event Management System</h1>
-      <p>Project setup complete. The team is building the pages on feature branches.</p>
-    </main>
+    <>
+      <Navbar />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <main className="container section">
+              <h1>Campus Events</h1>
+              <p>Home page coming soon.</p>
+            </main>
+          }
+        />
+      </Routes>
+      <Footer />
+    </>
   );
 }
