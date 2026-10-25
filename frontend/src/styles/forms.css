@@ -1,0 +1,167 @@
+/* ---------- Forms (login, signup, registration, admin) ---------- */
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+.form h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 6px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  font: inherit;
+  color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--navy-700);
+  box-shadow: 0 0 0 3px rgba(19, 49, 92, 0.12);
+}
+
+.form-group input[readonly] {
+  background: var(--bg);
+  color: var(--muted);
+}
+
+.form-group.has-error input,
+.form-group.has-error select,
+.form-group.has-error textarea {
+  border-color: var(--danger);
+}
+
+.field-error {
+  color: var(--danger);
+  font-size: 0.82rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+
+.checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--navy-800);
+}
+
+/* ---------- Auth pages ---------- */
+.auth-page {
+  display: grid;
+  place-items: center;
+  padding: 56px 20px;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(244, 178, 35, 0.15), transparent 40%),
+    var(--bg);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 36px 32px;
+}
+
+.auth-card h1 {
+  font-size: 1.7rem;
+  margin-bottom: 4px;
+}
+
+.auth-subtitle {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+
+.auth-switch {
+  text-align: center;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.auth-switch a {
+  font-weight: 600;
+}
+
+.demo-accounts {
+  margin-top: 20px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--gold-100);
+  font-size: 0.85rem;
+  color: #6b4d07;
+}
+
+.demo-accounts strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.password-field {
+  position: relative;
+}
+
+.password-field input {
+  padding-right: 64px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: none;
+  color: var(--navy-700);
+  font: 600 0.8rem var(--font-body);
+  cursor: pointer;
+  padding: 6px;
+}
+
+@media (max-width: 520px) {
+  .auth-card {
+    padding: 28px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
