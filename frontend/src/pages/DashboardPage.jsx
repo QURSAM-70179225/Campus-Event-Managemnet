@@ -74,6 +74,11 @@ export default function DashboardPage() {
           )}
         </div>
 
+        {isAdmin && (
+          <div className="alert alert-info dash-admin-note">
+            You can create, edit and delete events from <Link to="/admin">Manage Events</Link>.
+          </div>
+        )}
 
         {message && <div className="alert alert-success">{message}</div>}
         {error && <div className="alert alert-error">{error}</div>}

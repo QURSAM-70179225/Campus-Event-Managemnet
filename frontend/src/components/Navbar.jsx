@@ -50,6 +50,11 @@ export default function Navbar() {
               Dashboard
             </NavLink>
           )}
+          {user?.role === 'admin' && (
+            <NavLink to="/admin" onClick={close}>
+              Manage Events
+            </NavLink>
+          )}
 
           <div className="nav-actions">
             {user ? (
