@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
+import EventsPage from './pages/EventsPage.jsx';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
             </main>
           }
         />
+        <Route path="/events" element={<EventsPage />} />
       </Routes>
       <Footer />
     </>
