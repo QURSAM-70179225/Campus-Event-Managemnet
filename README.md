@@ -12,8 +12,8 @@ A full-stack web application where students of **The University of Lahore** can 
 | Team Lead / Project Manager | **Qursam Bibi** (70179225) | `main`, `feature/integration` |
 | Front-End Developer 1 (UI) | **Muzammil Hussain** (70177133) | `feature/frontend-ui` |
 | Front-End Developer 2 (Functionality) | **Fatima Umer** (70177175) | `feature/frontend-functionality` |
-| Back-End Developer 1 (REST API) | **Maria Munawer** | `feature/backend-api` |
-| Back-End Developer 2 (Database & Testing) | **Aqsa Maratab** | `feature/database-testing` |
+| Back-End Developer 1 (REST API) | **Maria Munawer**(70177175) | `feature/backend-api` |
+| Back-End Developer 2 (Database & Testing) | **Aqsa Maratab** (70177175)| `feature/database-testing` |
 
 ## ✨ Features
 
