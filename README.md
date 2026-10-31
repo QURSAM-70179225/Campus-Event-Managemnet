@@ -1,7 +1,7 @@
 # 🎓 Campus Event Management System
 
 A full-stack web application where students of **The University of Lahore** can browse university events — seminars, workshops, sports, competitions, conferences and society activities — and register for them. Administrators can create, update and delete events.
-# Live Demo Link:  https://campus-event-managemnet.vercel.app/
+# Live Demo Link:https://campus-event-managemnet.vercel.app/
 
 ![Home page](screenshots/01-home.png)
 
