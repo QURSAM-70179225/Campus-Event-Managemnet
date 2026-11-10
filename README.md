@@ -144,6 +144,26 @@ npm test
 
 Full reference with request/response examples: [`documentation/API.md`](documentation/API.md) · Database design: [`documentation/DATABASE.md`](documentation/DATABASE.md)
 
+## 🐳 Run with Docker
+
+You only need [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed.
+
+```bash
+docker compose up --build
+```
+
+Then open **http://localhost:8080** (API: http://localhost:5000/api/health).
+
+| Container | What it does | Port |
+|---|---|---|
+| `campus-event-frontend` | React app built with Vite, served by nginx; forwards `/api` to the backend | 8080 |
+| `campus-event-backend` | Express + SQLite API | 5000 |
+
+- Database is kept in the Docker volume `db-data`, so data survives restarts.
+- Demo logins: `admin@uol.edu.pk / admin123`, `student@uol.edu.pk / student123`
+- Set your own secret: `JWT_SECRET=some_long_random_value docker compose up --build`
+- Stop: `docker compose down` (add `-v` to also delete the database)
+
 ## 🌐 Deployment
 
 **Back end → Render**
