@@ -1,0 +1,26 @@
+# Run the whole app with:  docker compose up --build
+# Then open http://localhost:8080
+services:
+  backend:
+    build: ./backend
+    container_name: campus-event-backend
+    environment:
+      JWT_SECRET: ${JWT_SECRET:-change_this_to_a_long_random_secret}
+      CLIENT_URL: "*"
+    volumes:
+      - db-data:/app/data
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: campus-event-frontend
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+volumes:
+  db-data:
